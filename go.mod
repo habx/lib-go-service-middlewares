@@ -39,3 +39,4 @@ require (
 )
 
 // replace github.com/habx/lib-go-tests => ../lib-go-tests
+replace github.com/habx/lib-go-utils => ../lib-go-utils
