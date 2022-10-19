@@ -1,0 +1,51 @@
+version: 2.1
+
+# --- Anchor alias ---- #
+alias:
+# ---- Jobs filters ---- #
+  - &filters_only_dev
+    branches:
+      only: dev
+    tags:
+      ignore: /.*/
+  - &filters_only_branch
+    branches:
+      ignore:
+        - dev
+    tags:
+      ignore: /.*/
+
+orbs:
+  containers: habx/containers@0.11.0
+  go: habx/golang@0.12.0
+
+github-config-private: &github-config-private
+  github-config-private-package: true
+  github-config-private-username: habxtech
+
+workflows:
+  tests:
+    jobs:
+      - go/static-tests:
+          context: golang
+          <<: *github-config-private
+          filters:
+            <<: *filters_only_branch
+      - go/tests:
+          context: golang
+          <<: *github-config-private
+          filters:
+            <<: *filters_only_branch
+
+  dev:
+    jobs:
+      - go/static-tests:
+          context: golang
+          <<: *github-config-private
+          filters:
+            <<: *filters_only_dev
+      - go/tests:
+          context: golang
+          <<: *github-config-private
+          filters:
+            <<: *filters_only_dev
