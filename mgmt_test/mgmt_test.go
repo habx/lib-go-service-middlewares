@@ -1,4 +1,4 @@
-package mgmt
+package mgmt_test
 
 import (
 	"net/http"
