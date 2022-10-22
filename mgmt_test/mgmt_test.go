@@ -6,6 +6,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
+	"go.uber.org/zap"
 
 	tcreds "github.com/habx/lib-go-tests/credentials"
 	thttp "github.com/habx/lib-go-tests/http"
@@ -69,6 +70,44 @@ func TestGlobal(t *testing.T) {
 	t.Run("pprof no header", func(t *testing.T) {
 		c := srv.GetClient(thttp.OptCltTest(t))
 		a.Equal(401, c.GetStatusCode("/mgmt/pprof/symbol"))
+	})
+}
+
+func TestGlobalForHealthWithOption(t *testing.T) {
+	a := assert.New(t)
+
+	eng := gin.New()
+	eng.Use(gin.Recovery()) // For /mgmt/crash
+	a.NoError(mgmt.Plug(eng,
+		mgmt.OptHabxEnv("dev"),
+		mgmt.OptHealthManager(uhealth.NewManager())),
+		mgmt.OptLogger(zap.NewNop().Sugar()),
+		mgmt.OptToken(tcreds.GetComponentToken()),
+	)
+
+	srv := thttp.GetServer(t, thttp.OptHandler(eng))
+
+	t.Run("health", func(t *testing.T) {
+		c := srv.GetClient(thttp.OptCltTest(t))
+		a.Equal(c.GetString("/mgmt/health"), "OK")
+	})
+}
+
+func TestGlobalForVersionWithOption(t *testing.T) {
+	a := assert.New(t)
+
+	eng := gin.New()
+	eng.Use(gin.Recovery()) // For /mgmt/c
+	a.NoError(mgmt.Plug(eng,
+		mgmt.OptHabxEnv("dev"),
+		mgmt.OptBuildInfo(&buildt.Info{Version: "1.2.3"}),
+	))
+
+	srv := thttp.GetServer(t, thttp.OptHandler(eng))
+
+	t.Run("version", func(t *testing.T) {
+		c := srv.GetClient(thttp.OptCltTest(t))
+		a.Equal(`{"version":"1.2.3"}`, c.GetString("/mgmt/version"))
 	})
 }
 
