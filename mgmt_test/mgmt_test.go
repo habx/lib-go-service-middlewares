@@ -13,6 +13,7 @@ import (
 	uhealth "github.com/habx/lib-go-utils/health"
 
 	"github.com/habx/lib-go-service-middlewares/mgmt"
+	"github.com/habx/lib-go-service-middlewares/mgmt/crash"
 	"github.com/habx/lib-go-service-middlewares/mgmt/health"
 	"github.com/habx/lib-go-service-middlewares/mgmt/memstats"
 	"github.com/habx/lib-go-service-middlewares/mgmt/pprof"
@@ -114,4 +115,16 @@ func TestPprof(t *testing.T) {
 	s := thttp.GetServer(t, thttp.OptHandler(r))
 	c := s.GetClient()
 	a.Contains(c.GetString("/mgmt/pprof/symbol"), "num_symbols:")
+}
+
+func TestCrash(t *testing.T) {
+	a := assert.New(t)
+
+	r := gin.Default()
+	r.Use(gin.Recovery())
+	crash.Plug(r)
+
+	s := thttp.GetServer(t, thttp.OptHandler(r))
+	c := s.GetClient()
+	a.Equal(http.StatusInternalServerError, c.GetStatusCode("/mgmt/crash"))
 }
