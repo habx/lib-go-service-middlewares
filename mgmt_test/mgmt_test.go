@@ -8,6 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/zap"
 
+	acl "github.com/habx/lib-go-acl/v2"
 	tcreds "github.com/habx/lib-go-tests/credentials"
 	thttp "github.com/habx/lib-go-tests/http"
 	buildt "github.com/habx/lib-go-types/build"
@@ -109,6 +110,19 @@ func TestGlobalForVersionWithOption(t *testing.T) {
 		c := srv.GetClient(thttp.OptCltTest(t))
 		a.Equal(`{"version":"1.2.3"}`, c.GetString("/mgmt/version"))
 	})
+}
+
+func TestGlobalWithACLManager(t *testing.T) {
+	a := assert.New(t)
+
+	aclManager, err := acl.NewACLManager(acl.OptHabxEnv("dev"))
+	a.NoError(err)
+
+	eng := gin.New()
+	a.NoError(mgmt.Plug(eng,
+		mgmt.OptHabxEnv("dev"),
+		mgmt.OptACLManager(aclManager),
+	))
 }
 
 func TestVersion(t *testing.T) {
