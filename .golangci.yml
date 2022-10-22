@@ -76,7 +76,7 @@ linters-settings:
   goimports:
     # put imports beginning with prefix after 3rd-party packages;
     # it's a comma-separated list of prefixes
-    local-prefixes: github.com/habx/lib-go-template
+    local-prefixes: github.com/habx/lib-go-service-middlewares
 
     sections:
       - standard
@@ -87,7 +87,7 @@ linters-settings:
       - standard
       - default
       - prefix(github.com/habx)
-      - prefix(github.com/habx/lib-go-template)
+      - prefix(github.com/habx/lib-go-service-middlewares)
   misspell:
     locale: US
 issues:
