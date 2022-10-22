@@ -83,9 +83,9 @@ func TestGlobalForHealthWithOption(t *testing.T) {
 	eng.Use(gin.Recovery()) // For /mgmt/crash
 	a.NoError(mgmt.Plug(eng,
 		mgmt.OptHabxEnv("dev"),
-		mgmt.OptHealthManager(uhealth.NewManager())),
+		mgmt.OptHealthManager(uhealth.NewManager()),
 		mgmt.OptLogger(zap.NewNop().Sugar()),
-		mgmt.OptToken(tcreds.GetComponentToken()),
+		mgmt.OptToken(tcreds.GetComponentToken())),
 	)
 
 	srv := thttp.GetServer(t, thttp.OptHandler(eng))
