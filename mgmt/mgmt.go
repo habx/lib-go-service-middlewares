@@ -44,9 +44,11 @@ func Plug(eng *gin.Engine, options ...PlugOption) error {
 	r := eng.Group("/mgmt")
 
 	// These calls are without auth:
+	r.HEAD("/version")
 	r.GET("/version", version.Handler(conf.buildInfo))
-	r.GET("/crash", crash.Handler())
+	r.HEAD("/health")
 	r.GET("/health", health.Handler(conf.healthManager))
+	r.GET("/crash", crash.Handler())
 
 	// These calls are with auth:
 	r.GET("/memstats", mid, memstats.Handler())
