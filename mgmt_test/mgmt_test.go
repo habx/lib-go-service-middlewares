@@ -1,6 +1,8 @@
 package mgmt_test
 
 import (
+	"errors"
+	"io"
 	"net/http"
 	"testing"
 
@@ -38,7 +40,7 @@ func TestGlobal(t *testing.T) {
 
 	t.Run("health", func(t *testing.T) {
 		c := srv.GetClient(thttp.OptCltTest(t))
-		a.Equal(c.GetString("/mgmt/health"), "OK")
+		a.Equal(c.GetString("/mgmt/health"), `{"status":"ok"}`)
 	})
 
 	token := tcreds.GetUserToken()
@@ -90,7 +92,7 @@ func TestGlobalForHealthWithOption(t *testing.T) {
 
 	t.Run("health", func(t *testing.T) {
 		c := srv.GetClient(thttp.OptCltTest(t))
-		a.Equal(c.GetString("/mgmt/health"), "OK")
+		a.Equal(c.GetString("/mgmt/health"), `{"status":"ok"}`)
 	})
 }
 
@@ -141,11 +143,31 @@ func TestHealth(t *testing.T) {
 
 	r := gin.Default()
 	h := uhealth.NewManager()
+
+	{
+		count := 0
+		h.AddCheck("test", func() error {
+			count++
+			if count > 1 {
+				return errors.New("sample error") //nolint:goerr113
+			}
+
+			return nil
+		})
+	}
 	health.Plug(r, h)
 
 	s := thttp.GetServer(t, thttp.OptHandler(r))
 	c := s.GetClient()
-	a.Equal(c.GetString("/mgmt/health"), "OK")
+	a.Equal(c.GetString("/mgmt/health"), `{"status":"ok"}`)
+	resp := c.Get("/mgmt/health")
+
+	defer resp.Body.Close()
+
+	a.Equal(http.StatusInternalServerError, resp.StatusCode)
+	content, err := io.ReadAll(resp.Body)
+	a.NoError(err)
+	a.Equal(`{"error":"check test failed: sample error","status":"error"}`, string(content))
 }
 
 func TestMemStats(t *testing.T) {

@@ -12,12 +12,15 @@ import (
 func Handler(m *health.Manager) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		if err := m.Check(); err != nil {
-			c.String(http.StatusInternalServerError, err.Error())
+			c.JSON(http.StatusInternalServerError, gin.H{
+				"status": "error",
+				"error":  err.Error(),
+			})
 
 			return
 		}
 
-		c.String(http.StatusOK, "OK")
+		c.JSON(http.StatusOK, gin.H{"status": "ok"})
 	}
 }
 
