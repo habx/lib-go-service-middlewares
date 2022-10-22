@@ -1,4 +1,4 @@
-package mgmt
+package version
 
 import (
 	"net/http"
@@ -9,8 +9,8 @@ import (
 	buildu "github.com/habx/lib-go-utils/build"
 )
 
-// VersionHandler returns the version of the service
-func VersionHandler(bi *buildt.Info) gin.HandlerFunc {
+// Handler returns the version of the service
+func Handler(bi *buildt.Info) gin.HandlerFunc {
 	if bi == nil {
 		var err error
 		bi, err = buildu.GetInfo()
@@ -25,7 +25,7 @@ func VersionHandler(bi *buildt.Info) gin.HandlerFunc {
 	}
 }
 
-// VersionPlug plugs the API to /mgmt/version
-func VersionPlug(eng *gin.Engine, bi *buildt.Info) {
-	eng.GET("/mgmt/version", VersionHandler(bi))
+// Plug plugs the API to /mgmt/version
+func Plug(r gin.IRoutes, bi *buildt.Info) {
+	r.GET("/mgmt/version", Handler(bi))
 }

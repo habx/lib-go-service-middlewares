@@ -1,4 +1,4 @@
-package mgmt
+package health
 
 import (
 	"net/http"
@@ -8,8 +8,8 @@ import (
 	"github.com/habx/lib-go-utils/health"
 )
 
-// HealthHandler returns the version of the service
-func HealthHandler(m *health.Manager) gin.HandlerFunc {
+// Handler returns the version of the service
+func Handler(m *health.Manager) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		if err := m.Check(); err != nil {
 			c.String(http.StatusInternalServerError, err.Error())
@@ -21,7 +21,7 @@ func HealthHandler(m *health.Manager) gin.HandlerFunc {
 	}
 }
 
-// HealthPlug plugs the API to /mgmt/version
-func HealthPlug(eng *gin.Engine, m *health.Manager) {
-	eng.GET("/mgmt/health", HealthHandler(m))
+// Plug plugs the API to /mgmt/version
+func Plug(r gin.IRoutes, m *health.Manager) {
+	r.GET("/mgmt/health", Handler(m))
 }

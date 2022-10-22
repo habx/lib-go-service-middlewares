@@ -7,35 +7,67 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
 
+	tcreds "github.com/habx/lib-go-tests/credentials"
 	thttp "github.com/habx/lib-go-tests/http"
 	buildt "github.com/habx/lib-go-types/build"
+	uhealth "github.com/habx/lib-go-utils/health"
 
 	"github.com/habx/lib-go-service-middlewares/mgmt"
+	"github.com/habx/lib-go-service-middlewares/mgmt/health"
+	"github.com/habx/lib-go-service-middlewares/mgmt/memstats"
+	"github.com/habx/lib-go-service-middlewares/mgmt/pprof"
+	"github.com/habx/lib-go-service-middlewares/mgmt/version"
 )
 
-func TestPlug(t *testing.T) {
+func TestGlobal(t *testing.T) {
 	a := assert.New(t)
 
 	eng := gin.New()
-	mgmt.Plug(eng)
+	eng.Use(gin.Recovery()) // For /mgmt/crash
+	a.NoError(mgmt.Plug(eng, mgmt.OptHabxEnv("dev")))
 
 	srv := thttp.GetServer(t, thttp.OptHandler(eng))
-	c := srv.GetClient()
 
 	t.Run("version", func(t *testing.T) {
-		a.Contains(c.GETAsString("/mgmt/version"), "\"version\":\"")
+		c := srv.GetClient(thttp.OptCltTest(t))
+		a.Contains(c.GetString("/mgmt/version"), "\"version\":\"")
 	})
 
-	t.Run("crash", func(t *testing.T) {
-		req, err := http.NewRequest("GET", srv.URL("/mgmt/crash"), nil)
-		a.NoError(err)
+	t.Run("health", func(t *testing.T) {
+		c := srv.GetClient(thttp.OptCltTest(t))
+		a.Equal(c.GetString("/mgmt/health"), "OK")
+	})
 
-		resp, err := c.Do(req)
-		if resp != nil {
-			defer resp.Body.Close()
-		}
-		a.Error(err)
-		a.Nil(resp)
+	token := tcreds.GetUserToken()
+
+	t.Run("crash", func(t *testing.T) {
+		c := srv.GetClient(thttp.OptCltTest(t), thttp.OptCltToken(token))
+		a.Equal(http.StatusInternalServerError, c.GetStatusCode("/mgmt/crash"))
+	})
+
+	t.Run("memstats no auth", func(t *testing.T) {
+		c := srv.GetClient(thttp.OptCltTest(t))
+		a.Equal(http.StatusUnauthorized, c.GetStatusCode("/mgmt/memstats"))
+	})
+
+	t.Run("memstats", func(t *testing.T) {
+		c := srv.GetClient(thttp.OptCltTest(t), thttp.OptCltToken(token))
+		a.Contains(c.GetString("/mgmt/memstats"), "Alloc")
+	})
+
+	t.Run("pprof no auth", func(t *testing.T) {
+		c := srv.GetClient(thttp.OptCltTest(t))
+		a.Equal(http.StatusUnauthorized, c.GetStatusCode("/mgmt/pprof/symbol"))
+	})
+
+	t.Run("pprof", func(t *testing.T) {
+		c := srv.GetClient(thttp.OptCltTest(t), thttp.OptCltToken(token))
+		a.Contains(c.GetString("/mgmt/pprof/symbol"), "num_symbols:")
+	})
+
+	t.Run("pprof no header", func(t *testing.T) {
+		c := srv.GetClient(thttp.OptCltTest(t))
+		a.Equal(401, c.GetStatusCode("/mgmt/pprof/symbol"))
 	})
 }
 
@@ -43,9 +75,43 @@ func TestVersion(t *testing.T) {
 	a := assert.New(t)
 
 	r := gin.Default()
-	mgmt.VersionPlug(r, &buildt.Info{Version: "1.2.3"})
+	version.Plug(r, &buildt.Info{Version: "1.2.3"})
 
 	s := thttp.GetServer(t, thttp.OptHandler(r))
 	c := s.GetClient()
-	a.Contains(c.GETAsString("/mgmt/version"), "1.2.3")
+	a.Contains(c.GetString("/mgmt/version"), "1.2.3")
+}
+
+func TestHealth(t *testing.T) {
+	a := assert.New(t)
+
+	r := gin.Default()
+	h := uhealth.NewManager()
+	health.Plug(r, h)
+
+	s := thttp.GetServer(t, thttp.OptHandler(r))
+	c := s.GetClient()
+	a.Equal(c.GetString("/mgmt/health"), "OK")
+}
+
+func TestMemStats(t *testing.T) {
+	a := assert.New(t)
+
+	r := gin.Default()
+	memstats.Plug(r)
+
+	s := thttp.GetServer(t, thttp.OptHandler(r))
+	c := s.GetClient()
+	a.Contains(c.GetString("/mgmt/memstats"), "Alloc")
+}
+
+func TestPprof(t *testing.T) {
+	a := assert.New(t)
+
+	r := gin.Default()
+	pprof.Plug(r.Group("/"))
+
+	s := thttp.GetServer(t, thttp.OptHandler(r))
+	c := s.GetClient()
+	a.Contains(c.GetString("/mgmt/pprof/symbol"), "num_symbols:")
 }
