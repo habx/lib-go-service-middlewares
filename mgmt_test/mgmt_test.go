@@ -121,6 +121,7 @@ func TestGlobalWithACLManager(t *testing.T) {
 	a.NoError(err)
 
 	eng := gin.New()
+	eng.Use(gin.Recovery())
 	a.NoError(mgmt.Plug(eng,
 		mgmt.OptHabxEnv("dev"),
 		mgmt.OptACLManager(aclManager),
