@@ -4,13 +4,15 @@ go 1.19
 
 require (
 	github.com/habx/lib-go-acl/v2 v2.19.2-0.20221022092129-fdfc440e40ea
-	github.com/habx/lib-go-tests v0.5.1-0.20221022185141-11f9e1b3fbc0
+	github.com/habx/lib-go-tests v0.5.2-0.20221023113743-b9d82eb2b035
 	github.com/habx/lib-go-types v0.9.0
 	github.com/habx/lib-go-utils v0.5.0
-	github.com/stretchr/testify v1.8.0
+
 	github.com/gin-contrib/pprof v1.4.0
 	github.com/gin-gonic/gin v1.8.1
 	go.uber.org/zap v1.23.0
+
+	github.com/stretchr/testify v1.8.0
 )
 
 require (
@@ -39,9 +41,6 @@ require (
 	golang.org/x/text v0.3.7 // indirect
 	google.golang.org/protobuf v1.28.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
-)
-
-require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect

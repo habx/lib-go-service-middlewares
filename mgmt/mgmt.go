@@ -20,6 +20,7 @@ import (
 	"github.com/habx/lib-go-service-middlewares/mgmt/memstats"
 	"github.com/habx/lib-go-service-middlewares/mgmt/pprof"
 	"github.com/habx/lib-go-service-middlewares/mgmt/version"
+	"github.com/habx/lib-go-service-middlewares/querytoheader"
 )
 
 const aclSlug = "tech.diagnostics.access"
@@ -52,7 +53,7 @@ func Plug(eng *gin.Engine, options ...PlugOption) error {
 
 	// These calls are with auth:
 	r.GET("/memstats", mid, memstats.Handler())
-	pprof.PlugOnRoute(r.Group("/pprof", mid), "/")
+	pprof.PlugOnRoute(r.Group("/pprof", querytoheader.Handler(map[string]string{"token": "auth-token"}), mid), "/")
 
 	if conf.token.IsSet() {
 		_, err = conf.aclManager.DeclarePermissions(
