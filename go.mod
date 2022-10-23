@@ -6,8 +6,8 @@ require (
 	github.com/habx/lib-go-acl/v2 v2.19.2-0.20221022092129-fdfc440e40ea
 	github.com/habx/lib-go-tests v0.5.2-0.20221023113743-b9d82eb2b035
 	github.com/habx/lib-go-types v0.9.0
-	github.com/habx/lib-go-utils v0.5.0
-
+	github.com/habx/lib-go-utils v0.6.0
+  
 	github.com/gin-contrib/pprof v1.4.0
 	github.com/gin-gonic/gin v1.8.1
 	go.uber.org/zap v1.23.0
