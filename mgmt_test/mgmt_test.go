@@ -65,6 +65,11 @@ func TestGlobal(t *testing.T) {
 		a.Equal(http.StatusUnauthorized, c.GetStatusCode("/mgmt/pprof/symbol"))
 	})
 
+	t.Run("pprof bad auth", func(t *testing.T) {
+		c := srv.GetClient(thttp.OptCltToken(tcreds.GetTestUserToken()))
+		a.Equal(http.StatusUnauthorized, c.GetStatusCode("/mgmt/pprof/symbol"))
+	})
+
 	t.Run("pprof", func(t *testing.T) {
 		c := srv.GetClient(thttp.OptCltToken(token))
 		a.Contains(c.GetString("/mgmt/pprof/symbol"), "num_symbols:")
