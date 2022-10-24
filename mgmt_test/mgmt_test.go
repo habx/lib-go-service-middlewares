@@ -34,44 +34,44 @@ func TestGlobal(t *testing.T) {
 	srv := thttp.GetServer(t, thttp.OptHandler(eng))
 
 	t.Run("version", func(t *testing.T) {
-		c := srv.GetClient(thttp.OptCltTest(t))
+		c := srv.GetClient()
 		a.Contains(c.GetString("/mgmt/version"), "\"version\":\"")
 	})
 
 	t.Run("health", func(t *testing.T) {
-		c := srv.GetClient(thttp.OptCltTest(t))
+		c := srv.GetClient()
 		a.Equal(c.GetString("/mgmt/health"), `{"status":"ok"}`)
 	})
 
 	token := tcreds.GetUserToken()
 
 	t.Run("crash", func(t *testing.T) {
-		c := srv.GetClient(thttp.OptCltTest(t), thttp.OptCltToken(token))
+		c := srv.GetClient(thttp.OptCltToken(token))
 		a.Equal(http.StatusInternalServerError, c.GetStatusCode("/mgmt/crash"))
 	})
 
 	t.Run("memstats no auth", func(t *testing.T) {
-		c := srv.GetClient(thttp.OptCltTest(t))
+		c := srv.GetClient()
 		a.Equal(http.StatusUnauthorized, c.GetStatusCode("/mgmt/memstats"))
 	})
 
 	t.Run("memstats", func(t *testing.T) {
-		c := srv.GetClient(thttp.OptCltTest(t), thttp.OptCltToken(token))
+		c := srv.GetClient(thttp.OptCltToken(token))
 		a.Contains(c.GetString("/mgmt/memstats"), "Alloc")
 	})
 
 	t.Run("pprof no auth", func(t *testing.T) {
-		c := srv.GetClient(thttp.OptCltTest(t))
+		c := srv.GetClient()
 		a.Equal(http.StatusUnauthorized, c.GetStatusCode("/mgmt/pprof/symbol"))
 	})
 
 	t.Run("pprof", func(t *testing.T) {
-		c := srv.GetClient(thttp.OptCltTest(t), thttp.OptCltToken(token))
+		c := srv.GetClient(thttp.OptCltToken(token))
 		a.Contains(c.GetString("/mgmt/pprof/symbol"), "num_symbols:")
 	})
 
 	t.Run("pprof no header", func(t *testing.T) {
-		c := srv.GetClient(thttp.OptCltTest(t))
+		c := srv.GetClient()
 		a.Equal(401, c.GetStatusCode("/mgmt/pprof/symbol"))
 	})
 }
@@ -91,7 +91,7 @@ func TestGlobalForHealthWithOption(t *testing.T) {
 	srv := thttp.GetServer(t, thttp.OptHandler(eng))
 
 	t.Run("health", func(t *testing.T) {
-		c := srv.GetClient(thttp.OptCltTest(t))
+		c := srv.GetClient()
 		a.Equal(c.GetString("/mgmt/health"), `{"status":"ok"}`)
 	})
 }
@@ -109,7 +109,7 @@ func TestGlobalForVersionWithOption(t *testing.T) {
 	srv := thttp.GetServer(t, thttp.OptHandler(eng))
 
 	t.Run("version", func(t *testing.T) {
-		c := srv.GetClient(thttp.OptCltTest(t))
+		c := srv.GetClient()
 		a.Equal(`{"version":"1.2.3"}`, c.GetString("/mgmt/version"))
 	})
 }
