@@ -44,6 +44,10 @@ github.com/habx/lib-go-tests v0.7.0 h1:ApPNVXv8hpCGHvDb5eB+kpsgkTxqgTUi2UCZEKb5x
 github.com/habx/lib-go-tests v0.7.0/go.mod h1:CuRQ6fWnTxKfp4KOJkj0PljQfkb7vJlnKCU4YaJXLMg=
 github.com/habx/lib-go-tests v0.5.2-0.20221023113743-b9d82eb2b035 h1:sHqVg6/S7QnCKbyrSPZoGnT12XGyS2vL28nyHj9P8jo=
 github.com/habx/lib-go-tests v0.5.2-0.20221023113743-b9d82eb2b035/go.mod h1:aQ7ebFCBjMKENb2YVDxgvssTmKL3h74tzKUu2hWrymw=
+github.com/habx/lib-go-tests v0.6.0 h1:XsggMpNT3Wimd9d2f1ZqG5fgn/76uJA9VNZmik7wMm4=
+github.com/habx/lib-go-tests v0.6.0/go.mod h1:aQ7ebFCBjMKENb2YVDxgvssTmKL3h74tzKUu2hWrymw=
+github.com/habx/lib-go-tests v0.7.0 h1:ApPNVXv8hpCGHvDb5eB+kpsgkTxqgTUi2UCZEKb5xvk=
+github.com/habx/lib-go-tests v0.7.0/go.mod h1:CuRQ6fWnTxKfp4KOJkj0PljQfkb7vJlnKCU4YaJXLMg=
 github.com/habx/lib-go-types v0.9.0 h1:WOJNg4BlWftYkfsIb0z1JBEwM6UJUU1/l7fue0laAw8=
 github.com/habx/lib-go-types v0.9.0/go.mod h1:z3wenLnv/g0IaPxOeGdfHtIFx5ZrIbkA4ZonKW3C2Ek=
 github.com/habx/lib-go-types v0.9.1 h1:cNqYZvqxagz9s2a61ObiID3DiTCdBlp2XP8im2Zz0tI=
@@ -52,6 +56,8 @@ github.com/habx/lib-go-utils v0.3.0 h1:oZTPJO1jhR8BIeHh6MgQX15pV87+rNqoFDCyhYEhC
 github.com/habx/lib-go-utils v0.3.0/go.mod h1:C6hnMII0j9jX5k9mVQmwDKzkIATq2LS3z7BBzULqCIs=
 github.com/habx/lib-go-utils v0.5.0 h1:ZyC6MzJkwPwqD0DQ1dWKa0zAPmSFeYONeCV0VK+3JVI=
 github.com/habx/lib-go-utils v0.5.0/go.mod h1:C6hnMII0j9jX5k9mVQmwDKzkIATq2LS3z7BBzULqCIs=
+github.com/habx/lib-go-utils v0.6.0 h1:S0BEfyQR87W4wOQ8cK84ju1VcKpf9FmKdge1pjFHp5g=
+github.com/habx/lib-go-utils v0.6.0/go.mod h1:C6hnMII0j9jX5k9mVQmwDKzkIATq2LS3z7BBzULqCIs=
 github.com/json-iterator/go v1.1.12 h1:PV8peI4a0ysnczrg+LtxykD8LfKY9ML6u2jnxaEnrnM=
 github.com/json-iterator/go v1.1.12/go.mod h1:e30LSqwooZae/UwlEbR2852Gd8hjQvJoHmT4TnhNGBo=
 github.com/kr/pretty v0.1.0/go.mod h1:dAy3ld7l9f0ibDNOQOHHMYYIIbhfbHSm3C4ZsoJORNo=
