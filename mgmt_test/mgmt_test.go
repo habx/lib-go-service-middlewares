@@ -70,9 +70,9 @@ func TestGlobal(t *testing.T) {
 		a.Contains(c.GetString("/mgmt/pprof/symbol"), "num_symbols:")
 	})
 
-	t.Run("pprof no header", func(t *testing.T) {
+	t.Run("pprof auth by query", func(t *testing.T) {
 		c := srv.GetClient()
-		a.Equal(401, c.GetStatusCode("/mgmt/pprof/symbol"))
+		a.Contains(c.GetString("/mgmt/pprof/symbol?token="+token.Value), "num_symbols:")
 	})
 }
 
