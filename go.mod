@@ -3,13 +3,13 @@ module github.com/habx/lib-go-service-middlewares
 go 1.19
 
 require (
-	github.com/habx/lib-go-acl/v2 v2.19.2-0.20221022092129-fdfc440e40ea
-	github.com/habx/lib-go-tests v0.7.0
-	github.com/habx/lib-go-types v0.9.0
-	github.com/habx/lib-go-utils v0.6.0
-  
 	github.com/gin-contrib/pprof v1.4.0
 	github.com/gin-gonic/gin v1.8.1
+	github.com/habx/lib-go-acl/v2 v2.19.2-0.20221024103642-4399fc68f9a0
+	github.com/habx/lib-go-tests v0.7.0
+	github.com/habx/lib-go-types v0.9.1
+	github.com/habx/lib-go-utils v0.6.0
+	github.com/stretchr/testify v1.8.0
 	go.uber.org/zap v1.23.0
 
 	github.com/stretchr/testify v1.8.0

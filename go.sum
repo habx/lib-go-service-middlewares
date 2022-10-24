@@ -26,6 +26,8 @@ github.com/habx/lib-go-acl/v2 v2.19.2-0.20221021211401-6df11e595460 h1:9AVJroI6T
 github.com/habx/lib-go-acl/v2 v2.19.2-0.20221021211401-6df11e595460/go.mod h1:5kDm2LGe0TUehsHAfBMTNxWlQu4k7MEHHlpP7gpZQ5Q=
 github.com/habx/lib-go-acl/v2 v2.19.2-0.20221022092129-fdfc440e40ea h1:Zm/LsMQTmm6A52JZTENw8BOh0JK3q+5TBOXs13UT7ac=
 github.com/habx/lib-go-acl/v2 v2.19.2-0.20221022092129-fdfc440e40ea/go.mod h1:5kDm2LGe0TUehsHAfBMTNxWlQu4k7MEHHlpP7gpZQ5Q=
+github.com/habx/lib-go-acl/v2 v2.19.2-0.20221024103642-4399fc68f9a0 h1:9vUrLsN6X2nyQMGezkQplwEB5DiXWc4qgv/ugJVEnxU=
+github.com/habx/lib-go-acl/v2 v2.19.2-0.20221024103642-4399fc68f9a0/go.mod h1:FOeMEuJncnUVSaL68Yq3FNEjfhMiwQuuyOQElX7mKjQ=
 github.com/habx/lib-go-service-link v0.2.0 h1:KVdIyraUtYuBIWkz5TQPUo54dBDxNqRC/wT5oN3cQt0=
 github.com/habx/lib-go-service-link v0.2.0/go.mod h1:UPC0kvM2/YWpKIyo86Q+OukCI+nYT4icCG914995KJk=
 github.com/habx/lib-go-tests v0.3.0 h1:8T++er3wJJwnkvRBSAStYpqOtouWtRuJ5JBVwBOvsgY=
@@ -38,6 +40,8 @@ github.com/habx/lib-go-tests v0.5.1-0.20221022080731-6014ffcd337e h1:BgZwFVfi1Sp
 github.com/habx/lib-go-tests v0.5.1-0.20221022080731-6014ffcd337e/go.mod h1:aQ7ebFCBjMKENb2YVDxgvssTmKL3h74tzKUu2hWrymw=
 github.com/habx/lib-go-tests v0.5.1-0.20221022185141-11f9e1b3fbc0 h1:RSw+zxqz4RVxpzfMasiLJZwTiC1D/orZzQaM5Vd/anc=
 github.com/habx/lib-go-tests v0.5.1-0.20221022185141-11f9e1b3fbc0/go.mod h1:aQ7ebFCBjMKENb2YVDxgvssTmKL3h74tzKUu2hWrymw=
+github.com/habx/lib-go-tests v0.7.0 h1:ApPNVXv8hpCGHvDb5eB+kpsgkTxqgTUi2UCZEKb5xvk=
+github.com/habx/lib-go-tests v0.7.0/go.mod h1:CuRQ6fWnTxKfp4KOJkj0PljQfkb7vJlnKCU4YaJXLMg=
 github.com/habx/lib-go-tests v0.5.2-0.20221023113743-b9d82eb2b035 h1:sHqVg6/S7QnCKbyrSPZoGnT12XGyS2vL28nyHj9P8jo=
 github.com/habx/lib-go-tests v0.5.2-0.20221023113743-b9d82eb2b035/go.mod h1:aQ7ebFCBjMKENb2YVDxgvssTmKL3h74tzKUu2hWrymw=
 github.com/habx/lib-go-tests v0.6.0 h1:XsggMpNT3Wimd9d2f1ZqG5fgn/76uJA9VNZmik7wMm4=
@@ -46,6 +50,8 @@ github.com/habx/lib-go-tests v0.7.0 h1:ApPNVXv8hpCGHvDb5eB+kpsgkTxqgTUi2UCZEKb5x
 github.com/habx/lib-go-tests v0.7.0/go.mod h1:CuRQ6fWnTxKfp4KOJkj0PljQfkb7vJlnKCU4YaJXLMg=
 github.com/habx/lib-go-types v0.9.0 h1:WOJNg4BlWftYkfsIb0z1JBEwM6UJUU1/l7fue0laAw8=
 github.com/habx/lib-go-types v0.9.0/go.mod h1:z3wenLnv/g0IaPxOeGdfHtIFx5ZrIbkA4ZonKW3C2Ek=
+github.com/habx/lib-go-types v0.9.1 h1:cNqYZvqxagz9s2a61ObiID3DiTCdBlp2XP8im2Zz0tI=
+github.com/habx/lib-go-types v0.9.1/go.mod h1:z3wenLnv/g0IaPxOeGdfHtIFx5ZrIbkA4ZonKW3C2Ek=
 github.com/habx/lib-go-utils v0.3.0 h1:oZTPJO1jhR8BIeHh6MgQX15pV87+rNqoFDCyhYEhCuU=
 github.com/habx/lib-go-utils v0.3.0/go.mod h1:C6hnMII0j9jX5k9mVQmwDKzkIATq2LS3z7BBzULqCIs=
 github.com/habx/lib-go-utils v0.5.0 h1:ZyC6MzJkwPwqD0DQ1dWKa0zAPmSFeYONeCV0VK+3JVI=
