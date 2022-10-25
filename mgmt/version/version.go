@@ -1,6 +1,7 @@
 package version
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -16,12 +17,16 @@ func Handler(bi *buildt.Info) gin.HandlerFunc {
 		bi, err = buildu.GetInfo()
 
 		if err != nil {
-			panic(err)
+			log.Println("WARNING: lib-go-service-middlewares: Couldn't fetch build info: ", err)
 		}
 	}
 
 	return func(c *gin.Context) {
-		c.JSON(http.StatusOK, bi)
+		if bi != nil {
+			c.JSON(http.StatusOK, bi)
+		} else {
+			c.String(http.StatusInternalServerError, "No build info")
+		}
 	}
 }
 
