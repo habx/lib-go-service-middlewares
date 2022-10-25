@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/gin-contrib/pprof v1.4.0
 	github.com/gin-gonic/gin v1.8.1
-	github.com/habx/lib-go-acl/v3 v3.0.0
+	github.com/habx/lib-go-acl/v3 v3.0.1
 	github.com/habx/lib-go-tests v0.9.0
 	github.com/habx/lib-go-types v0.9.1
 	github.com/habx/lib-go-utils v0.6.0
