@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
 
-	thttp "github.com/habx/lib-go-tests/http"
+	tgin "github.com/habx/lib-go-tests/http/gin"
 
 	"github.com/habx/lib-go-service-middlewares/querytoheader"
 )
@@ -15,7 +15,7 @@ import (
 func TestQueryToHeader(t *testing.T) {
 	a := assert.New(t)
 
-	g := gin.Default()
+	srv, g := tgin.GetServerWithGin(t)
 
 	r := g.Group("/", querytoheader.Handler(map[string]string{"param": "header"}))
 
@@ -23,7 +23,6 @@ func TestQueryToHeader(t *testing.T) {
 		c.String(http.StatusOK, c.Request.Header.Get("header"))
 	})
 
-	srv := thttp.GetServer(t, thttp.OptHandler(g))
 	c := srv.GetClient()
 	a.Equal("foo", c.GetString("/test?param=foo"))
 }
