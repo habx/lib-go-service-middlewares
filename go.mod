@@ -8,7 +8,7 @@ require (
 	github.com/gin-gonic/gin v1.8.1
 	github.com/google/uuid v1.3.0
 	github.com/habx/lib-go-acl/v3 v3.0.1
-	github.com/habx/lib-go-tests v0.9.1-0.20221026110005-ce6e77f4a754
+	github.com/habx/lib-go-tests v0.10.0
 	github.com/habx/lib-go-types v0.9.1
 	github.com/habx/lib-go-utils v0.6.0
 	github.com/stretchr/testify v1.8.0
