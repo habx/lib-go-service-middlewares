@@ -9,8 +9,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 
-	acl "github.com/habx/lib-go-acl/v2"
-	aclmid "github.com/habx/lib-go-acl/v2/middleware"
+	acl "github.com/habx/lib-go-acl/v3"
+	aclmid "github.com/habx/lib-go-acl/v3/middleware"
 	tauth "github.com/habx/lib-go-types/auth"
 	tbuild "github.com/habx/lib-go-types/build"
 	uhealth "github.com/habx/lib-go-utils/health"

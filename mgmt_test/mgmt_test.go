@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/zap"
 
-	acl "github.com/habx/lib-go-acl/v2"
+	acl "github.com/habx/lib-go-acl/v3"
 	tcreds "github.com/habx/lib-go-tests/credentials"
 	thttp "github.com/habx/lib-go-tests/http"
 	buildt "github.com/habx/lib-go-types/build"
