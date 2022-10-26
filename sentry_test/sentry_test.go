@@ -4,11 +4,12 @@ import (
 	"net/http"
 	"testing"
 
+	"github.com/gin-gonic/gin"
+	"github.com/stretchr/testify/assert"
+
 	tgin "github.com/habx/lib-go-tests/http/gin"
 
-	"github.com/gin-gonic/gin"
 	"github.com/habx/lib-go-service-middlewares/sentry"
-	"github.com/stretchr/testify/assert"
 )
 
 func TestSentry(t *testing.T) {

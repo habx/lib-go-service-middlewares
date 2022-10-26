@@ -5,6 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// Handler returns a gin middleware that sends errors to sentry
 func Handler() gin.HandlerFunc {
 	return sentrygin.New(sentrygin.Options{Repanic: true})
 }
