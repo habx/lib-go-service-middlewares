@@ -29,7 +29,7 @@ func TestGlobal(t *testing.T) {
 
 	eng := gin.New()
 	eng.Use(gin.Recovery()) // For /mgmt/crash
-	a.NoError(mgmt.Plug(eng, mgmt.OptHabxEnv("dev")))
+	a.NoError(mgmt.Plug(eng))
 
 	srv := thttp.GetServer(t, thttp.OptHandler(eng))
 

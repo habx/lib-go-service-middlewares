@@ -114,7 +114,13 @@ func initConfig(options ...PlugOption) (*plugConfig, error) {
 
 	if conf.aclManager == nil {
 		var err error
-		conf.aclManager, err = acl.NewACLManager(acl.OptHabxEnv(conf.habxEnv), acl.OptLogger(conf.logger))
+
+		aclmgrEnv := conf.habxEnv
+		if aclmgrEnv == "test" {
+			aclmgrEnv = "dev"
+		}
+
+		conf.aclManager, err = acl.NewACLManager(acl.OptHabxEnv(aclmgrEnv), acl.OptLogger(conf.logger))
 
 		if err != nil {
 			return nil, fmt.Errorf("unable to create ACL manager: %w", err)
