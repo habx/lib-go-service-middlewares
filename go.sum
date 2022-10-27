@@ -43,6 +43,8 @@ github.com/habx/lib-go-types v0.9.1 h1:cNqYZvqxagz9s2a61ObiID3DiTCdBlp2XP8im2Zz0
 github.com/habx/lib-go-types v0.9.1/go.mod h1:z3wenLnv/g0IaPxOeGdfHtIFx5ZrIbkA4ZonKW3C2Ek=
 github.com/habx/lib-go-utils v0.6.0 h1:S0BEfyQR87W4wOQ8cK84ju1VcKpf9FmKdge1pjFHp5g=
 github.com/habx/lib-go-utils v0.6.0/go.mod h1:C6hnMII0j9jX5k9mVQmwDKzkIATq2LS3z7BBzULqCIs=
+github.com/habx/lib-go-utils v0.7.0 h1:f3pwJOtecvfPiEzPbKMaiia3LNhOndwVBYDf0AIQFm4=
+github.com/habx/lib-go-utils v0.7.0/go.mod h1:SxU84lmyJ3GuaYfOz/D/ZQuwUDSnhXvqbNdgGye5XGg=
 github.com/json-iterator/go v1.1.12 h1:PV8peI4a0ysnczrg+LtxykD8LfKY9ML6u2jnxaEnrnM=
 github.com/json-iterator/go v1.1.12/go.mod h1:e30LSqwooZae/UwlEbR2852Gd8hjQvJoHmT4TnhNGBo=
 github.com/jtolds/gls v4.20.0+incompatible h1:xdiiI2gbIgH/gLH7ADydsJ1uDOEzR8yvV7C0MuV77Wo=
@@ -122,6 +124,8 @@ golang.org/x/text v0.3.3/go.mod h1:5Zoc/QRtKVWzQhOtBMvqHzDpF6irO9z98xDceosuGiQ=
 golang.org/x/text v0.3.6/go.mod h1:5Zoc/QRtKVWzQhOtBMvqHzDpF6irO9z98xDceosuGiQ=
 golang.org/x/text v0.3.7 h1:olpwvP2KacW1ZWvsR7uQhoyTYvKAupfQrRGBFM352Gk=
 golang.org/x/text v0.3.7/go.mod h1:u+2+/6zg+i71rQMx5EYifcz6MCKuco9NR6JIITiCfzQ=
+golang.org/x/text v0.4.0 h1:BrVqGRd7+k1DiOgtnFvAkoQEWQvBc25ouMJM6429SFg=
+golang.org/x/text v0.4.0/go.mod h1:mrYo+phRRbMaCq/xk9113O4dZlRixOauAjOtrjsXDZ8=
 golang.org/x/tools v0.0.0-20180917221912-90fa682c2a6e/go.mod h1:n7NCudcB/nEzxVGmLbDWY5pfWTLqBcC2KZ6jyYvM4mQ=
 golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=
 google.golang.org/protobuf v1.26.0-rc.1/go.mod h1:jlhhOSvTdKEhbULTjvd4ARK9grFBp09yW+WbY/TyQbw=

@@ -10,7 +10,7 @@ require (
 	github.com/habx/lib-go-acl/v3 v3.0.1
 	github.com/habx/lib-go-tests v0.10.0
 	github.com/habx/lib-go-types v0.9.1
-	github.com/habx/lib-go-utils v0.6.0
+	github.com/habx/lib-go-utils v0.7.0
 	github.com/stretchr/testify v1.8.0
 	go.uber.org/zap v1.23.0
 )
@@ -39,7 +39,7 @@ require (
 	golang.org/x/crypto v0.0.0-20220926161630-eccd6366d1be // indirect
 	golang.org/x/net v0.0.0-20221002022538-bcab6841153b // indirect
 	golang.org/x/sys v0.0.0-20220928140112-f11e5e49a4ec // indirect
-	golang.org/x/text v0.3.7 // indirect
+	golang.org/x/text v0.4.0 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
