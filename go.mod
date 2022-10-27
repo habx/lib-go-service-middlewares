@@ -11,7 +11,7 @@ require (
 	github.com/habx/lib-go-tests v0.10.0
 	github.com/habx/lib-go-types v0.9.1
 	github.com/habx/lib-go-utils v0.7.0
-	github.com/stretchr/testify v1.8.0
+	github.com/stretchr/testify v1.8.1
 	go.uber.org/zap v1.23.0
 )
 
