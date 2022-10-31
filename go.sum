@@ -47,6 +47,8 @@ github.com/habx/lib-go-utils v0.7.0 h1:f3pwJOtecvfPiEzPbKMaiia3LNhOndwVBYDf0AIQF
 github.com/habx/lib-go-utils v0.7.0/go.mod h1:SxU84lmyJ3GuaYfOz/D/ZQuwUDSnhXvqbNdgGye5XGg=
 github.com/habx/lib-go-utils v0.8.0 h1:/qmztWTyGftcuQPzDDFf/oTmlgOnbnh3Rl/l+qUBj7E=
 github.com/habx/lib-go-utils v0.8.0/go.mod h1:wEgv61i2RrKAHh59M/uWcByLM9ld7TFgIwoin3kcKMM=
+github.com/habx/lib-go-utils v0.9.0 h1:m16OThoG/Y6e64/N56Me0SKjgdxinB82QLqCz8fE6Lo=
+github.com/habx/lib-go-utils v0.9.0/go.mod h1:wEgv61i2RrKAHh59M/uWcByLM9ld7TFgIwoin3kcKMM=
 github.com/json-iterator/go v1.1.12 h1:PV8peI4a0ysnczrg+LtxykD8LfKY9ML6u2jnxaEnrnM=
 github.com/json-iterator/go v1.1.12/go.mod h1:e30LSqwooZae/UwlEbR2852Gd8hjQvJoHmT4TnhNGBo=
 github.com/jtolds/gls v4.20.0+incompatible h1:xdiiI2gbIgH/gLH7ADydsJ1uDOEzR8yvV7C0MuV77Wo=
