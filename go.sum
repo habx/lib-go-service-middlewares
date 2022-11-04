@@ -33,6 +33,8 @@ github.com/google/uuid v1.3.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+
 github.com/gopherjs/gopherjs v0.0.0-20181017120253-0766667cb4d1 h1:EGx4pi6eqNxGaHF6qqu48+N2wcFQ5qg5FXgOdqsJ5d8=
 github.com/habx/lib-go-acl/v3 v3.0.1 h1:FVbFoSCcBynZK7Rq/CfhdTq+5C8E1h1SMhq6gkllLC4=
 github.com/habx/lib-go-acl/v3 v3.0.1/go.mod h1:Qv7AsP1BIfT5SVbmqESgs4YuxzwfJs313klAFTU1shM=
+github.com/habx/lib-go-acl/v3 v3.1.0 h1:R8pr9TukjcZBIL1DdbWlx/3jurh5PmEPAw2ARBB4LMU=
+github.com/habx/lib-go-acl/v3 v3.1.0/go.mod h1:alg/qXr6ir7Dk+/LYaBwhA1UBNsBZVRtTuJw6fXN+5U=
 github.com/habx/lib-go-service-link v0.2.0 h1:KVdIyraUtYuBIWkz5TQPUo54dBDxNqRC/wT5oN3cQt0=
 github.com/habx/lib-go-service-link v0.2.0/go.mod h1:UPC0kvM2/YWpKIyo86Q+OukCI+nYT4icCG914995KJk=
 github.com/habx/lib-go-tests v0.9.1-0.20221026110005-ce6e77f4a754 h1:3cfasVX5GgD0lgtEyGo23zk2AXgVIpq2rFR39Z2EOL0=
