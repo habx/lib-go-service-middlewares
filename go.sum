@@ -45,6 +45,8 @@ github.com/habx/lib-go-types v0.9.1 h1:cNqYZvqxagz9s2a61ObiID3DiTCdBlp2XP8im2Zz0
 github.com/habx/lib-go-types v0.9.1/go.mod h1:z3wenLnv/g0IaPxOeGdfHtIFx5ZrIbkA4ZonKW3C2Ek=
 github.com/habx/lib-go-types v0.10.1 h1:+ncCGioLUaxxk2WO1X6Y1bh+vDH3/keugZKO0ZpBWGo=
 github.com/habx/lib-go-types v0.10.1/go.mod h1:SpuuhdJLWhT8NhGQe5LKJXLOP5s6TYxWKxU8PebgNck=
+github.com/habx/lib-go-types v0.10.2 h1:/hcNs3Tfu6CKU+M3985acUhxap0y+r0EdiiXuDHanwI=
+github.com/habx/lib-go-types v0.10.2/go.mod h1:SpuuhdJLWhT8NhGQe5LKJXLOP5s6TYxWKxU8PebgNck=
 github.com/habx/lib-go-utils v0.6.0 h1:S0BEfyQR87W4wOQ8cK84ju1VcKpf9FmKdge1pjFHp5g=
 github.com/habx/lib-go-utils v0.6.0/go.mod h1:C6hnMII0j9jX5k9mVQmwDKzkIATq2LS3z7BBzULqCIs=
 github.com/habx/lib-go-utils v0.7.0 h1:f3pwJOtecvfPiEzPbKMaiia3LNhOndwVBYDf0AIQFm4=
