@@ -26,8 +26,21 @@ func ValidateOrigins(validOrigins []string) func(string) bool {
 	}
 }
 
-// Handler returns a gin handler for CORS in the habx stack
-func Handler() gin.HandlerFunc {
+type corsConfig struct {
+	forceTransmission bool
+}
+
+// Option is a function that configures the cors middleware
+type Option func(c *corsConfig)
+
+// OptForceTransmission forces the transmission of the CORS headers
+func OptForceTransmission() Option {
+	return func(c *corsConfig) {
+		c.forceTransmission = true
+	}
+}
+
+func createCorsConfig() cors.Config {
 	corsConfig := cors.Config{
 		// AllowMethods: []string{"GET", "POST", "PUT", "PATCH", "DELETE", "HEAD"},
 
@@ -61,5 +74,26 @@ func Handler() gin.HandlerFunc {
 		AllowCredentials: true,
 	}
 
-	return cors.New(corsConfig)
+	return corsConfig
+}
+
+// Handler returns a gin handler for CORS in the habx stack
+func Handler(options ...Option) gin.HandlerFunc {
+	conf := corsConfig{}
+
+	for _, option := range options {
+		option(&conf)
+	}
+
+	handler := cors.New(createCorsConfig())
+
+	if conf.forceTransmission {
+		previousHandler := handler
+		handler = func(c *gin.Context) {
+			c.Request.Host = "fake-host-to-force-cors-transmission"
+			previousHandler(c)
+		}
+	}
+
+	return handler
 }
