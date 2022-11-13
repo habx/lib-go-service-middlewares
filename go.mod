@@ -7,7 +7,7 @@ require (
 	github.com/gin-contrib/pprof v1.4.0
 	github.com/gin-gonic/gin v1.8.1
 	github.com/google/uuid v1.3.0
-	github.com/habx/lib-go-acl/v4 v4.0.1
+	github.com/habx/lib-go-acl/v4 v4.2.0
 	github.com/habx/lib-go-tests v0.10.0
 	github.com/habx/lib-go-types v0.10.2
 	github.com/habx/lib-go-utils v0.11.0
@@ -23,7 +23,7 @@ require (
 	github.com/go-playground/universal-translator v0.18.0 // indirect
 	github.com/go-playground/validator/v10 v10.11.1 // indirect
 	github.com/goccy/go-json v0.9.11 // indirect
-	github.com/habx/lib-go-service-link v0.2.0 // indirect
+	github.com/habx/lib-go-service-link v0.3.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/machinebox/graphql v0.2.2 // indirect
