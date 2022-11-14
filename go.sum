@@ -37,6 +37,8 @@ github.com/habx/lib-go-acl/v4 v4.0.1 h1:eQ+Romp4dtxYyOyZejmpXygSUZXfKXgZqFoYj8Pj
 github.com/habx/lib-go-acl/v4 v4.0.1/go.mod h1:jl0kdoor09FBC7DLfn8oqxMjLVXGHgydiYaQPzCfmro=
 github.com/habx/lib-go-acl/v4 v4.2.0 h1:Ntf8M0HsiYH/xJvHUhUzlhJZM824LVWFWUA60kYHwCU=
 github.com/habx/lib-go-acl/v4 v4.2.0/go.mod h1:Xj2R+eclkg3fIOZzC3zklcUWQ+sL1xYdZFpORFHkluk=
+github.com/habx/lib-go-acl/v4 v4.3.0 h1:kZfw1z90JBPLmR0L6jJrBOhlv4E/0dWBu+6KDhhKwDE=
+github.com/habx/lib-go-acl/v4 v4.3.0/go.mod h1:PyKonRFI8Sjm1yiUvbPQeOWgzgksM9Q80e6Bw27m3WE=
 github.com/habx/lib-go-service-link v0.2.0 h1:KVdIyraUtYuBIWkz5TQPUo54dBDxNqRC/wT5oN3cQt0=
 github.com/habx/lib-go-service-link v0.2.0/go.mod h1:UPC0kvM2/YWpKIyo86Q+OukCI+nYT4icCG914995KJk=
 github.com/habx/lib-go-service-link v0.3.0 h1:eG1Hyu5Zq0UYcoBr2YCUDdg3JgXVpwpRwFsSc5bOWHE=
