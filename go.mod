@@ -10,7 +10,7 @@ require (
 	github.com/habx/lib-go-acl/v4 v4.3.0
 	github.com/habx/lib-go-tests v0.10.0
 	github.com/habx/lib-go-types v0.10.2
-	github.com/habx/lib-go-utils v0.11.0
+	github.com/habx/lib-go-utils v0.12.0
 	github.com/stretchr/testify v1.8.1
 	go.uber.org/zap v1.23.0
 )
