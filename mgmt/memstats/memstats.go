@@ -23,7 +23,7 @@ func Handler() gin.HandlerFunc {
 		runtime.ReadMemStats(&m.Runtime)
 
 		var err error
-		m.CGroup, err = cgstats.Get()
+		m.CGroup, err = cgstats.GetAllMemoryStats()
 
 		if err != nil {
 			m.Status += "cgstats:" + err.Error() + "\n"
