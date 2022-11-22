@@ -2,7 +2,7 @@
 
 This library aims to be on par with [lib-service-middlewares](https://github.com/habx/lib-service-middlewares) but for Go.
 
-# /mgmt API
+## /mgmt API
 
 This API brings the following routes:
 - `/mgmt/version`
@@ -34,7 +34,7 @@ func main() {
 }
 ```
 
-# Sentry
+## Sentry
 Add sentry handling to the response.
 ```go
 import (
@@ -49,7 +49,7 @@ func main() {
 }
 ```
 
-# CORS handling
+## CORS handling
 Add CORS headers to the response.
 
 ```go
@@ -70,7 +70,7 @@ func main() {
 }
 ```
 
-# Request ID
+## Request ID
 Adds a request ID to the request context and a `X-Request-Id` header to the response.
 
 ```go
@@ -86,10 +86,10 @@ func main() {
 }
 ```
 
-# Connlimiter
+## Connlimiter
 Limits the number of connection that can be opened at the same time.
 
-## Queue connections globally
+### Queue connections globally
 ```go
 import (
     "github.com/gin-gonic/gin"
@@ -102,7 +102,7 @@ func main() {
 }
 ```
 
-## Drop connections globally
+### Drop connections globally
 ```go
 import (
     "github.com/gin-gonic/gin"
@@ -115,7 +115,7 @@ func main() {
 }
 ```
 
-## Queue connections per IP
+### Queue connections per IP
 ```go
 import (
     "github.com/gin-gonic/gin"
@@ -128,7 +128,7 @@ func main() {
 }
 ```
 
-## Drop connetions per IP
+### Drop connetions per IP
 ```go
 import (
     "github.com/gin-gonic/gin"
@@ -141,7 +141,7 @@ func main() {
 }
 ```
 
-# Query param to header
+## Query param to header
 ```go
 import (
     "github.com/habx/lib-go-service-middlewares/querytoheader"
