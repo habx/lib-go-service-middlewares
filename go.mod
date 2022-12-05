@@ -7,7 +7,7 @@ require (
 	github.com/gin-contrib/pprof v1.4.0
 	github.com/gin-gonic/gin v1.8.1
 	github.com/google/uuid v1.3.0
-	github.com/habx/lib-go-acl/v4 v4.3.0
+	github.com/habx/lib-go-acl/v4 v4.4.0
 	github.com/habx/lib-go-tests v0.10.0
 	github.com/habx/lib-go-types v0.10.2
 	github.com/habx/lib-go-utils v0.12.1
